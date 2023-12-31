@@ -9,7 +9,7 @@ git config user.name xxxx
 git config user.email xxxx
 git config credential.username xxxx
 ```
->> 이것들은 .git/config 에 반영된다
+> 이것들은 .git/config 에 반영된다
 ### 3. add remote origin 지정하기 
 ```
 git remote add origin git-url
