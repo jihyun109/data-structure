@@ -14,6 +14,11 @@ git config credential.username xxxx
 ```
 git remote add origin git-url
 ```
+OR
+```
+git clone git-url
+```
+> 그냥 쉽게 클론을 하고 , 학습한 코드들을 추가 해서 올리는게 편할수도 있습니다
 ### 4. add , commit , push(+ 최초 인증)
 ```
 git add .
