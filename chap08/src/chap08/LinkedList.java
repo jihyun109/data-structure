@@ -137,3 +137,5 @@ public class LinkedList<E> {
 		}
 	}
 }
+
+// test
