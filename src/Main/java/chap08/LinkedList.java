@@ -1,4 +1,4 @@
-package chap08.src.chap08;
+package chap08;
 
 import java.util.Comparator;
 
