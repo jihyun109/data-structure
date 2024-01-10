@@ -1,4 +1,4 @@
- package ctChap03;
+package ctChap03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
