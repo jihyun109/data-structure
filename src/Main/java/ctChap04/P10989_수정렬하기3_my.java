@@ -9,7 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class P10989_수정렬하기3_my {
-	public static Queue<Integer>[] myque = new LinkedList[9];
+	public static Queue<Integer>[] myque = new LinkedList[10];
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,6 +19,9 @@ public class P10989_수정렬하기3_my {
 		int[] A = new int [N];
 		for (int i = 0; i < N; i++) {
 			A[i] = Integer.parseInt(br.readLine());
+		}
+		for(int i = 0; i < 10; i++) {
+			myque[i] = new LinkedList<>();
 		}
 		radixSort(A, N);
 		for (int i = 0; i < N; i++) {
@@ -31,7 +34,7 @@ public class P10989_수정렬하기3_my {
 	private static void radixSort(int[] A, int N) {
 		for (int i = 1; i <= 5; i++) {		// 각 자릿수 정렬
 			for (int j = 0; j < N; j++) {	// 모든 수를 stack에 저장
-				switch(A[j] % 10^(i+1)) {
+				switch(A[j] % (int)(Math.pow(10, i)) / (int)(Math.pow(10, i-1))) {
 				case 0: 
 					(myque[0]).add(A[j]);
 					break;
@@ -63,14 +66,13 @@ public class P10989_수정렬하기3_my {
 					(myque[9]).add(A[j]);
 					break;
 				}
-				int idx = 0;
-				for (int k = 0; i < 10; k++) {
-					while (myque[k].size() != 0) {
-						A[idx++] = myque[k].poll();
-					}
+			}
+			int idx = 0;
+			for (int k = 0; k < 10; k++) {
+				while (myque[k].size() != 0) {
+					A[idx++] = myque[k].poll();
 				}
 			}
 		}
 	}
-
 }
