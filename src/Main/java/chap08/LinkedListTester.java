@@ -108,7 +108,7 @@ public class LinkedListTester {
 		Data ptr;		// 검색용 데이터 참조
 		Data temp = new Data();		// 입력용 데이터
 		
-		LinkedList<Data> list = new LinkedList<Data>();	// 리스트를 생성
+		LinkedList_my<Data> list = new LinkedList_my<Data>();	// 리스트를 생성
 		
 		do {
 			switch (menu = SelectMenu()) {

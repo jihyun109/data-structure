@@ -2,7 +2,7 @@ package chap08;
 
 import java.util.Comparator;
 
-public class LinkedList<E> {
+public class LinkedList_my<E> {
 	// 노드
 	class Node<E> {
 		private E data; // 데이터
@@ -19,7 +19,7 @@ public class LinkedList<E> {
 	private Node<E> crnt; // 선택 포인터(선택 노드 참조)
 
 	// 생성자
-	public LinkedList() {
+	public LinkedList_my() {
 		head = crnt = null;
 	}
 

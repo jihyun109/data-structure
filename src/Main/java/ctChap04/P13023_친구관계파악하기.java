@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 public class P13023_친구관계파악하기 {
 	static boolean[] visited;
-	static ArrayList<Integer>[] A=new ArrayList[1000];
+	static ArrayList<Integer>[] A;
 	static int count = 0;
 	public static void main(String[] args) throws IOException {
 		Scanner st = new Scanner(System.in);
@@ -18,10 +18,10 @@ public class P13023_친구관계파악하기 {
 
 		int p = 0;
 		int q = 0;
-//		A = new ArrayList<>(N + 1);
+		A = new ArrayList[N];
 
-		visited = new boolean [N + 1];
-		for (int i = 1; i < N + 1; i++) {
+		visited = new boolean [N];
+		for (int i = 0; i < N; i++) {
 			A[i]=new ArrayList<Integer>();
 		}
 
@@ -29,9 +29,13 @@ public class P13023_친구관계파악하기 {
 			p = st.nextInt();
 			q = st.nextInt();
 			A[p].add(q);
+			A[q].add(p);
 		}
 
-		for (int i = 1; i < N + 1; i++) {
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++)
+				visited[j] = false;
+
 			if (!visited[i]) {
 				count = 0;
 				DFS(i);
@@ -50,10 +54,18 @@ public class P13023_친구관계파악하기 {
 			return;
 		visited[vIdx] = true;
 		count++;
-		for (Integer i : A[vIdx]) {
-			DFS(vIdx);
-			if (count == 5)
-				return;
+		if (count == 5)
+			return;
+		for (int next : A[vIdx]) {
+			if(!visited[next] && count<5) {
+//				System.out.println(vIdx+" -> " + next +" cnt:"+(count+1));
+				DFS(next);
+			}
 		}
+		
+		if (count < 5)
+			count--;
+		visited[vIdx] = false;
+		
 	}
 }
