@@ -12,6 +12,7 @@ public class P1707_이분그래프_my {
 	static int visited[]; // 방문, 그룹 확인 배열
 	static Queue<Integer> que;
 	static Queue<String> answerQue;
+	
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -33,12 +34,11 @@ public class P1707_이분그래프_my {
 				int node1 = sc.nextInt();
 				int node2 = sc.nextInt();
 				arrList[node1].add(node2);
-				arrList[node2].add(node1);
 			}
 
 			isBipartiteGraph = BFS(); // 이분 그래프인지 판별);
 
-			if (isBipartiteGraph == true) {
+			if (isBipartiteGraph == true) {	// 출력
 				System.out.println("YES");
 			} else {
 				System.out.println("NO");

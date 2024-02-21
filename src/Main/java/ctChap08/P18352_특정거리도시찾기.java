@@ -22,7 +22,7 @@ public class P18352_특정거리도시찾기 {
 		city = new ArrayList[N + 1];
 		pq = new PriorityQueue<>();
 
-		for (int i = 1; i <= N; i++) { // city 배열 초기화
+		for (int i = 1; i <= N; i++) { // num 배열 초기화
 			city[i] = new ArrayList<Integer>();
 		}
 

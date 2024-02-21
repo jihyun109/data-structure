@@ -19,7 +19,7 @@ public class P2644_촌수계산 {
 		int V = sc.nextInt(); // 관계 개수
 		arrList = new ArrayList[n + 1];
 		visited = new boolean[n + 1];
-		for (int i = 0; i < n + 1; i++) { // arrList 초기화
+		for (int i = 0; i < n + 1; i++) { // City 초기화
 			arrList[i] = new ArrayList<Integer>();
 		}
 
