@@ -1,6 +1,5 @@
 package ctChap04;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class P11004_K번쨰수_my {
