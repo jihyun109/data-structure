@@ -1,5 +1,5 @@
 package ctChap08;
-// 플로이드-워셜 알고리즘을 이용해 kevinBakerGame배열에 kevinBaker게임을 했을 떄 나오는 단계를 저장하고, kevinBaker배열에 모두의 kevinBaker값을 저장한 후 최소인 사람을 찾는다.
+// 플로이드-워셜 알고리즘을 이용해 kevinBakerGame배열에 kevinBaker게임을 했을 떄 나오는 단계를 저장하고, kevinBaker배열에 모두의 kevinBaker값을 저장한 후 최소인 사람을 찾는다..
 import java.util.Scanner;
 
 public class P1389_케빈베이컨의6단계법칙 {
