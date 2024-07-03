@@ -1,4 +1,4 @@
-package chap08;
+package BaekJoon.chap08;
 
 import java.util.Comparator;
 public class DoubleLinkedList<E>{

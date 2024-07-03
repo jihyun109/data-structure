@@ -1,4 +1,4 @@
-package chap10;
+package BaekJoon.chap10;
 
 public class ChainHash<K, V> {
 

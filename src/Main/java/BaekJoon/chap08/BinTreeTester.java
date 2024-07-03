@@ -1,14 +1,14 @@
-package chap10;
+package BaekJoon.chap08;
 
 import java.util.Scanner;
 
-class ChainHashTester {
+class BinTreeTester {
 	static Scanner stdIn = new Scanner(System.in);
 
 	// 데이터(회원번호 + 이름)
 	static class Data {
-		static final int NO = 1;
-		static final int NAME = 2;
+		public static final int NO = 1;
+		public static final int NAME = 2;
 
 		private Integer no;
 		private String name;
@@ -40,9 +40,9 @@ class ChainHashTester {
 
 	// 메뉴 열거형
 	enum Menu {
-		ADD("추가"), REMOVE("삭제"), SEARCH("검색"), DUMP("출력"), TERMINATE("종료");
+		ADD("삽입"), REMOVE("삭제"), SEARCH("검색"), PRINT("출력"), TERMINATE("종료");
 
-		private final String message; // 출력할 문자열
+		private final String message;
 
 		static Menu MenuAt(int idx) { // 서수가 idx인 열거를 반환
 			for (Menu m : Menu.values())
@@ -75,35 +75,35 @@ class ChainHashTester {
 
 	public static void main(String[] args) {
 		Menu menu;
-		Data data;
-		Data temp = new Data();
-
-		ChainHash<Integer, Data> hash = new ChainHash<Integer, Data>(13);
+		Data data; // 추가용 데이터 참조
+		Data ptr; // 검색용 데이터 참조
+		Data temp = new Data(); // 입력용 데이터 참조
+		BinTree<Integer, Data> tree = new BinTree<Integer, Data>();
 
 		do {
 			switch (menu = SelectMenu()) {
 			case ADD:
 				data = new Data();
-				data.scanData("추가", Data.NO | Data.NAME);
-				hash.add(data.keyCode(), data);
+				data.scanData("삽입", Data.NO | Data.NAME);
+				tree.add(data.keyCode(), data);
 				break;
 
 			case REMOVE:
 				temp.scanData("삭제", Data.NO);
-				hash.remove(temp.keyCode());
+				tree.remove(temp.keyCode());
 				break;
 
 			case SEARCH:
 				temp.scanData("검색", Data.NO);
-				Data t = hash.search(temp.keyCode());
-				if (t != null)
-					System.out.println("그 키를 갖는 데이터는 " + t + "입니다.");
+				ptr = tree.search(temp.keyCode());
+				if (ptr != null)
+					System.out.println("그 번호의 이름은 " + ptr + "입니다.");
 				else
-					System.out.println("해당 데이터가 업습니다.");
+					System.out.println("해당 데이터가 없습니다.");
 				break;
 
-			case DUMP:
-				hash.dump();
+			case PRINT:
+				tree.print();
 				break;
 			}
 		} while (menu != Menu.TERMINATE);

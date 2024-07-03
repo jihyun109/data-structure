@@ -15,7 +15,7 @@ public class P1325_효율적인해킹_my {
 	static int[] trust;
 	static boolean[] visited;
 	static BufferedReader br;
-	static StringTokenizer st;
+	private static StringTokenizer st;
 	static int max;
 	static Queue<Integer> que;
 
