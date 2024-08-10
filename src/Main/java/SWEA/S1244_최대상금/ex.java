@@ -5,11 +5,12 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class S1244_최대상금 {
+public class ex {
 
-    private static Set<String> visited;
     private static int exchangeLimit;
     private static int max;
+    private static Set<String> visited;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int testCaseN = sc.nextInt();
@@ -31,29 +32,25 @@ public class S1244_최대상금 {
     }
 
     private static void exchange(char[] numArray, int exchangeN) {
-        String curString = new String(numArray);
+        String currentString = new String(numArray);
         if (exchangeN == exchangeLimit) {
-            String numberString = new String(numArray);
-            int number = Integer.parseInt(numberString);
-
+            int number = Integer.parseInt(currentString);
             max = Math.max(max, number);
             return;
         }
 
-        if (visited.contains(curString + exchangeN)) {
+        if (visited.contains(currentString + exchangeN)) {
             return;
         }
 
-        visited.add(curString + exchangeN);
+        visited.add(currentString + exchangeN);
 
         // numArray 의 숫자 두 개를 교환하는 모든 경우
         for (int i = 0; i < numArray.length; i++) {
             for (int j = i + 1; j < numArray.length; j++) {
-                char[] exchangedArray = Arrays.copyOf(numArray, numArray.length);   // 교환된 숫자 배열
+                char[] exchangedArray = Arrays.copyOf(numArray, numArray.length);
                 exchangedArray[i] = numArray[j];
                 exchangedArray[j] = numArray[i];
-
-//                System.out.println(exchangedArray);
                 exchange(exchangedArray, exchangeN + 1);
             }
         }
