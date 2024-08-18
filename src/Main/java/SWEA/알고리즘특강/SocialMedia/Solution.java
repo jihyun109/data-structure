@@ -27,7 +27,7 @@ class Solution {
     private static int min_post_cnt;
 
     private static BufferedReader br;
-    private static UserSolution3 user = new UserSolution3();
+    private static UserSolution2 user = new UserSolution2();
 
     private static boolean run() throws Exception
     {
