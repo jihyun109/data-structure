@@ -8,7 +8,7 @@ class Solution {
     private final static int CMD_REMOVE = 3;
     private final static int CMD_COUNT = 4;
 
-    private final static UserSolution usersolution = new UserSolution();
+    private final static UserSolution3 usersolution = new UserSolution3();
 
     private static boolean run(Scanner sc) {
         int q = sc.nextInt();
@@ -47,7 +47,7 @@ class Solution {
                     ret = usersolution.count(mstart, mend);
                     if (ret != ans) {
                         okay = false;
-                        System.out.println("ret: " + ret+ ", ans: " + ans);
+//                        System.out.println("ret: " + ret+ ", ans: " + ans);
                     }
 
                     break;

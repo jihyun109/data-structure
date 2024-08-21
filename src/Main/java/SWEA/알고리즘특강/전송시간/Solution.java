@@ -64,7 +64,7 @@ class Solution {
 
     public static void main(String[] args) throws Exception {
 
-        //System.setIn(new java.io.FileInputStream("res/sample_input.txt"));
+        System.setIn(new java.io.FileInputStream("src/Main/java/SWEA/알고리즘특강/전송시간/sample_input.txt"));
         sc = new Scanner(System.in);
 
         int T = sc.nextInt();

@@ -12,7 +12,7 @@ class Solution {
 
     private final static int BAR_LEN = 5;
 
-    private static UserSolution usersolution = new UserSolution();
+    private static UserSolution2 usersolution = new UserSolution2();
 
     private static boolean run(BufferedReader br) throws Exception {
 
