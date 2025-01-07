@@ -1,4 +1,4 @@
-package ctChap04;
+package BaekJoon.ctChap04;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
